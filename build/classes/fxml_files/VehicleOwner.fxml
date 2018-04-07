@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="gui.VehicleOwnerManagement" 
+    xmlns:fx="http://javafx.com/fxml" alignment="top_left" hgap="10" vgap="10"
+    styleClass="root">
+<padding><Insets top="25" right="10" bottom="25" left="10"/></padding>
+    
+    <Text id="korzystaszZSystemuJako" text="Korzystasz z systemu jako"
+        GridPane.columnIndex="47" GridPane.rowIndex="4"/>
+    
+    <Text id="kierowca" text="Kierowca"
+        GridPane.columnIndex="48" GridPane.rowIndex="1"
+        GridPane.columnSpan="3" GridPane.rowSpan="4"/>    
+        
+    
+    <Text fx:id="naglowekWlasciciel" text="Co chcesz zrobić?"
+        GridPane.columnIndex="47" GridPane.rowIndex="6"
+        GridPane.columnSpan="3" GridPane.rowSpan="4"/>
+    
+    <HBox fx:id="HBox6" spacing="10" alignment="center_left"
+        GridPane.columnIndex="47" GridPane.rowIndex="13"
+        GridPane.columnSpan="3" GridPane.rowSpan="2">
+        <Button fx:id="sprawdzenieInformacjiNaTematPojazduOwner" text="Sprawdzenie informacji na temat pojazdu"
+        prefWidth="300" prefHeight="30" onAction="#vehicleOwnerButtons"/>
+    </HBox>
+    
+    <HBox fx:id="HBox7" spacing="10" alignment="center_left"
+        GridPane.columnIndex="47" GridPane.rowIndex="15"
+        GridPane.columnSpan="3" GridPane.rowSpan="2">
+        <Button fx:id="sprawdzenieHistoriiPojazdu" text="Sprawdzenie historii pojazdu"
+        prefWidth="300" prefHeight="30" onAction="#vehicleOwnerButtons"/>
+    </HBox>
+    
+    <HBox fx:id="HBox8" spacing="10" alignment="center_left" visible="false"
+        GridPane.columnIndex="48" GridPane.rowIndex="13">
+        <Button fx:id="zatwierdz2" text="Zatwierdź" prefWidth="120" 
+        onAction="#vehicleOwnerButtons"/>
+    </HBox>
+    
+    
+    <Label fx:id="ownerVINLabel" text="Wpisz numer VIN pojazdu:" visible="false"
+        GridPane.columnIndex="47" GridPane.rowIndex="12"/>
+    
+    <TextField fx:id="ownerVINTextField" visible="false"
+        GridPane.columnIndex="47" GridPane.rowIndex="13"/>    
+    
+    <Label fx:id="ownerSecondLabel" text="Czy zarejestrowany:" visible="false"
+        GridPane.columnIndex="47" GridPane.rowIndex="14"/>
+    
+    <TextField fx:id="ownerSecondTextField" visible="false"
+        GridPane.columnIndex="47" GridPane.rowIndex="15"/>
+    
+    <Label fx:id="ownerThirdLabel" text="Ważność ubezpieczenia:" visible="false"
+        GridPane.columnIndex="47" GridPane.rowIndex="16"/>
+    
+    <TextField fx:id="ownerThirdTextField" visible="false"
+        GridPane.columnIndex="47" GridPane.rowIndex="17"/>
+    
+    <Label fx:id="ownerFourthLabel" text="Ważność przeglądu technicznego:" visible="false"
+        GridPane.columnIndex="47" GridPane.rowIndex="18"/>
+    
+    <TextField fx:id="ownerFourthTextField" visible="false"
+        GridPane.columnIndex="47" GridPane.rowIndex="19"/>
+    
+    
+    <TableView fx:id="tableView" visible="false" 
+        GridPane.columnIndex="47" GridPane.rowIndex="14"
+        GridPane.columnSpan="3" GridPane.rowSpan="7">
+        <columns>
+            <!--<TableColumn text="VIN" prefWidth="30" fx:id="VINo">
+            </TableColumn>-->
+            <TableColumn text="Nazwa zdarzenia" prefWidth="150" fx:id="nazwaZdarzenia">
+            </TableColumn>
+            <TableColumn text="Opis zdarzenia" prefWidth="160" fx:id="opisZdarzenia">
+            </TableColumn>
+            <TableColumn text="Data zdarzenia" prefWidth="100" fx:id="dataZdarzenia">
+            </TableColumn>
+        </columns> 
+    </TableView>
+    
+    <TableView fx:id="tableView2" visible="false" 
+        GridPane.columnIndex="47" GridPane.rowIndex="22"
+        GridPane.columnSpan="3" GridPane.rowSpan="7">
+        <columns>
+            <!--<TableColumn text="VIN" prefWidth="30" fx:id="VIN">
+            </TableColumn>-->
+            <TableColumn text="Nowy pesel" prefWidth="155" fx:id="PESEL_nowy">
+            </TableColumn>
+            <TableColumn text="Stary pesel" prefWidth="155" fx:id="PESEL_stary">
+            </TableColumn>
+            <TableColumn text="Data zdarzenia" prefWidth="100" fx:id="date">
+            </TableColumn>
+        </columns> 
+    </TableView>
+    
+    
+    <HBox spacing="10" alignment="center_left"
+        GridPane.columnIndex="47" GridPane.rowIndex="31"
+        GridPane.columnSpan="2" GridPane.rowSpan="2">
+        <Button text="Powrót do menu" prefWidth="300" prefHeight="30"
+        onAction="#goBackToMenuPane"/>
+    </HBox>
+    
+    <Text fx:id="wynik"
+        GridPane.columnIndex="47" GridPane.rowIndex="29"
+        GridPane.columnSpan="2"/>      
+    
+    <stylesheets>
+        <URL value="@/css_files/VehicleOwner.css"/>
+    </stylesheets>
+</GridPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="gui.MainMenuManagement" 
+    xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10"
+    styleClass="root">
+<padding><Insets top="25" right="10" bottom="25" left="10"/></padding>
+
+    <Text id="centralnaEwidencjaPojazdow" text="Centralna Ewidencja Pojazdów"
+        GridPane.columnIndex="0" GridPane.rowIndex="1"
+        GridPane.columnSpan="75"/>
+    
+    <Text id="korzystajJako" text="Korzystaj jako:"
+        GridPane.columnIndex="67" GridPane.rowIndex="10"
+        GridPane.columnSpan="6"/>
+    
+    <HBox spacing="10" alignment="center"
+        GridPane.columnIndex="67" GridPane.rowIndex="12"
+        GridPane.columnSpan="2">
+        <Button fx:id="button1" text="Właściciel"
+        onAction="#goToVehicleOwnerPane"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="center"
+        GridPane.columnIndex="69" GridPane.rowIndex="12"
+        GridPane.columnSpan="2">
+        <Button fx:id="button2" text="Policjant"
+        onAction="#goToPolicemanPane"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="center"
+        GridPane.columnIndex="71" GridPane.rowIndex="12"
+        GridPane.columnSpan="2">
+        <Button fx:id="button3" text="Urzędnik"
+        onAction="#goToDistrictPane"/>
+    </HBox>
+    
+    <stylesheets>
+        <URL value="@/css_files/MainMenu.css"/>
+    </stylesheets>
+</GridPane>

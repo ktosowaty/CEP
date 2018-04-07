@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="gui.DistrictManagement" 
+    xmlns:fx="http://javafx.com/fxml" alignment="top_left" hgap="10" vgap="10"
+    styleClass="root">
+<padding><Insets top="25" right="10" bottom="25" left="10"/></padding>
+    
+    <Text id="korzystaszZSystemuJako" text="Korzystasz z systemu jako"
+        GridPane.columnIndex="5" GridPane.rowIndex="8"/>
+    
+    <Text id="urzednik" text="Urzędnik"
+        GridPane.columnIndex="6" GridPane.rowIndex="5"
+        GridPane.rowSpan="4"/>    
+        
+    
+    <Text fx:id="naglowekUrzad" text="Co chcesz zrobić?"
+        GridPane.columnIndex="13" GridPane.rowIndex="7"
+        GridPane.columnSpan="3" GridPane.rowSpan="2"/>  
+        
+    <HBox fx:id="HBox1" spacing="10" alignment="center_left"
+        GridPane.columnIndex="13" GridPane.rowIndex="9"
+        GridPane.columnSpan="3" GridPane.rowSpan="2">
+        <Button fx:id="sprawdzenieInformacjiNaTematPojazdu" text="Sprawdzenie informacji na temat pojazdu"
+        prefWidth="300" prefHeight="30" onAction="#districtButtons"/>
+    </HBox>
+    
+    <HBox fx:id="HBox2" spacing="10" alignment="center_left"
+        GridPane.columnIndex="13" GridPane.rowIndex="11"
+        GridPane.columnSpan="3" GridPane.rowSpan="2">
+        <Button fx:id="rejestracjaPojazdu" text="Rejestracja pojazdu"
+        prefWidth="300" prefHeight="30" onAction="#districtButtons"/>
+    </HBox>
+    
+    <HBox fx:id="HBox3" spacing="10" alignment="center_left"
+        GridPane.columnIndex="13" GridPane.rowIndex="13"
+        GridPane.columnSpan="3" GridPane.rowSpan="2">
+        <Button fx:id="wyrejestrowaniePojazdu" text="Wyrejestrowanie pojazdu"
+        prefWidth="300" prefHeight="30" onAction="#districtButtons"/>
+    </HBox> 
+        
+    <HBox fx:id="HBox4" spacing="10" alignment="center_left"
+        GridPane.columnIndex="13" GridPane.rowIndex="15"
+        GridPane.columnSpan="3" GridPane.rowSpan="2">
+        <Button fx:id="zmianaNumeruRejestracyjnegoPojazdu" text="Zmiana numeru rejestracyjnego pojazdu"
+        prefWidth="300" prefHeight="30" onAction="#districtButtons"/>
+    </HBox>    
+              
+    <HBox fx:id="HBox5" spacing="10" alignment="center_left"
+        GridPane.columnIndex="13" GridPane.rowIndex="17"
+        GridPane.columnSpan="3" GridPane.rowSpan="2">
+        <Button fx:id="zmianaWlascicielaPojazdu" text="Zmiana właściciela pojazdu"
+        prefWidth="300" prefHeight="30" onAction="#districtButtons"/>
+    </HBox>
+        
+    
+    <HBox fx:id="HBox6" spacing="10" alignment="center_left" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="25">
+        <Button fx:id="zatwierdz" text="Zatwierdź" prefWidth="150" prefHeight="30"
+        onAction="#districtButtons"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="center_left"
+        GridPane.columnIndex="13" GridPane.rowIndex="25">
+        <Button text="Powrót do menu" prefWidth="150" prefHeight="30"
+        onAction="#goBackToMenuPane"/>
+    </HBox>    
+        
+    
+    <Label fx:id="districtVINLabel" text="Numer VIN:" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="9"/>
+    
+    <TextField fx:id="districtVINTextField" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="10"/>
+    
+    <Label fx:id="secondLabel" text="Ważność przeglądu" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="9"/>
+    
+    <TextField fx:id="secondTextField" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="10"/>
+    
+    <Label fx:id="thirdLabel" text="Ważność ubezpieczenia:" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="11"/>
+    
+    <TextField fx:id="thirdTextField" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="12"/>
+    
+    <Label fx:id="fourthLabel" text="Status kradzieży:" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="11"/>
+    
+    <TextField fx:id="fourthTextField" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="12"/>   
+    
+    <Label fx:id="fifthLabel" text="Numer rejestracyjny:" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="13"/>
+    
+    <TextField fx:id="fifthTextField" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="14"/>
+    
+    <Label fx:id="sixthLabel" text="Data produkcji:" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="13"/>
+    
+    <TextField fx:id="sixthTextField" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="14"/>   
+    
+    <Label fx:id="seventhLabel" text="Moc:" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="15"/>
+    
+    <TextField fx:id="seventhTextField" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="16"/>
+    
+    <Label fx:id="eighthLabel" text="Pojemność:" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="15"/>
+    
+    <TextField fx:id="eighthTextField" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="16"/>   
+    
+    <Label fx:id="ninthLabel" text="Rodzaj paliwa:" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="17"/>
+    
+    <TextField fx:id="ninthTextField" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="18"/>
+    
+    <Label fx:id="tenthLabel" text="ID marki:" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="17"/>
+    
+    <TextField fx:id="tenthTextField" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="18"/>   
+    
+    <Label fx:id="eleventhLabel" text="ID modelu:" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="19"/>
+    
+    <TextField fx:id="eleventhTextField" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="20"/>
+    
+    <Label fx:id="twelfthLabel" text="Numer polisy:" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="19"/>
+    
+    <TextField fx:id="twelfthTextField" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="20"/>   
+    
+    <Label fx:id="thirteenthLabel" text="ID urzędu:" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="21"/>
+    
+    <TextField fx:id="thirteenthTextField" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="22"/>
+    
+    <Label fx:id="fourteenthLabel" text="Status rejestracji:" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="21"/>
+    
+    <TextField fx:id="fourteenthTextField" visible="false"
+        GridPane.columnIndex="14" GridPane.rowIndex="22"/>          
+                
+    <Label fx:id="fifteenthLabel" text="Pesel właściciela:" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="23"/>
+    
+    <TextField fx:id="fifteenthTextField" visible="false"
+        GridPane.columnIndex="13" GridPane.rowIndex="24"/>
+    
+    <Text fx:id="operacja"
+        GridPane.columnIndex="14" GridPane.rowIndex="24"
+        GridPane.columnSpan="2"/>       
+    
+    <stylesheets>
+        <URL value="@/css_files/District.css"/>
+    </stylesheets>
+</GridPane>
